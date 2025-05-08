@@ -5,7 +5,7 @@
   <p>Estado: {{ state$ | async }}</p>
   <button (click)="updateState('updated')">Actualizar Estado</button>
 </div>
-<div class="complex-debt-container">
-  <h2>Funciones con Alta Complejidad</h2>
-  <p>{{ decisionMaking([{type: 'type1', value: 15}, {type: 'type2', isActive: true, value: 3}]) }}</p>
+<div class="refactored-complexity-container">
+  <h2>Funciones Simplificadas</h2>
+  <p>{{ decisionMakingRefactored([{type: 'type1', value: 15}, {type: 'type2', isActive: true, value: 3}]) }}</p>
 </div>

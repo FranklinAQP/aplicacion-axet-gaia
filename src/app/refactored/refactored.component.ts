@@ -26,30 +26,28 @@ export class RefactoredComponent {
     this._stateSubject.next(newState);
   }
 
-  // Función con alta complejidad ciclomatica y cognitiva
-  decisionMaking(data: any[]): string {
-    let result = '';
-    for (let item of data) {
-      if (item.type === 'type1') {
-        if (item.value > 10) {
-          result += 'High Type1\n';
-        } else {
-          result += 'Low Type1\n';
-        }
-      } else if (item.type === 'type2') {
-        if (item.isActive) {
-          if (item.value < 5) {
-            result += 'Active Low Type2\n';
-          } else {
-            result += 'Active High Type2\n';
-          }
-        } else {
-          result += 'Inactive Type2\n';
-        }
-      } else {
-        result += 'Other Type\n';
-      }
+  
+  // Refactorización para reducir complejidad ciclomatica y cognitiva
+  decisionMakingRefactored(data: any[]): string {
+    return data.map(item => this.evaluateItem(item)).join('\n');
+  }
+  
+  private evaluateItem(item: any): string {
+    switch (item.type) {
+      case 'type1':
+        return this.evaluateType1(item);
+      case 'type2':
+        return this.evaluateType2(item);
+      default:
+        return 'Other Type';
     }
-    return result;
+  }
+
+  private evaluateType1(item: any): string {
+    return item.value > 10 ? 'High Type1' : 'Low Type1';
+  }
+
+  private evaluateType2(item: any): string {
+    return item.isActive ? (item.value < 5 ? 'Active Low Type2' : 'Active High Type2') : 'Inactive Type2';
   }
 }
