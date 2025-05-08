@@ -1,0 +1,11 @@
+<div class="technical-debt-container">
+  <h2>Funciones con Deuda Técnica</h2>
+  <p>Sumatoria Original: {{ totalSum(data) }}</p>
+  <p>Lógica Duplicada: {{ duplicateLogic(data) }}</p>
+  <p>Estado: {{ state }}</p>
+  <button (click)="updateStateHard('updated')">Actualizar Estado</button>
+</div>
+<div class="refactored-complexity-container">
+  <h2>Funciones Simplificadas</h2>
+  <p>{{ decisionMakingRefactored([{type: 'type1', value: 15}, {type: 'type2', isActive: true, value: 3}]) }}</p>
+</div>
