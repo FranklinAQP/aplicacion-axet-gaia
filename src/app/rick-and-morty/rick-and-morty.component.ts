@@ -13,12 +13,10 @@ export class RickAndMortyComponent implements OnInit  {
   constructor(private rickAndMortyService: RickAndMortyService) { }
   
   ngOnInit(): void { 
-    console.log('getCharacter');
     this.getCharacter();
   }
 
   getCharacter(direction: string = '') {
-    console.log('getCharacter fn');
     if (this.currentPage > 1 && direction === 'back') {
       this.currentPage = this.currentPage - 1;
     }
