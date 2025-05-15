@@ -1,0 +1,17 @@
+.image-default {
+    width: 200px !important;
+    height: 200px !important;
+}
+
+mat-toolbar {
+    justify-content: space-between;
+  }
+  
+  .content {
+    padding: 16px;
+  }
+  
+  .content > mat-card {
+    margin-bottom: 16px;
+  }
+  
